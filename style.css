@@ -1,0 +1,41 @@
+@font-face {
+  font-family: ufc2;
+  src: url(font/Double-Porter-5.ttf);
+}
+@font-face {
+  font-family: mma;
+  src: url(font/Dream\ MMA.ttf);
+}
+@font-face {
+  font-family: tulisan;
+  src: url(font/shentox.otf);
+}
+@font-face {
+  font-family: kitabah;
+  src: url(font/shentox3.otf);
+}
+@font-face {
+    font-family: apa;
+    src: url(font/Sternbach\ Bold\ Italic.otf);
+}
+.font {
+  font-family: 'ufc2';
+}
+.mma {
+  font-family: 'mma';
+}
+.ufc {
+  font-family: 'tulisan';
+}
+.teks {
+  font-family: 'kitabah';
+}
+.apa {
+    font-family: 'apa';
+}
+.ufc-font-title {
+  letter-spacing: 0.08em;
+}
+.circle-shadow {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}

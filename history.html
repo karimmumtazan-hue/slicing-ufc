@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slicing ufc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-white h-16 flex items-center shadow-md z-20 px-6"
+    >
+      <!-- menu kiri -->
+      <div class="hidden md:flex items-center space-x-14 pl-10 w-1/3">
+        <a
+          href="overview.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font"
+          >overview</a
+        >
+
+        <a
+          href="stats.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font"
+          >stats</a
+        >
+      </div>
+
+      <!-- LOGO -->
+      <div class="flex justify-center w-1/3">
+        <a
+          href="slicingufcweb.html"
+          class="text-4xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 mma"
+        >
+          khabib
+        </a>
+      </div>
+
+      <!-- menu kanan -->
+      <div class="hidden md:flex items-center pr-10 w-1/3 justify-end">
+        <a
+          href="history.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font"
+          >history</a
+        >
+      </div>
+
+      <!-- BURGER -->
+      <button id="menu-btn" class="md:hidden ml-auto text-3xl">☰</button>
+    </nav>
+
+    <!-- MENU HP -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-16 left-0 w-full bg-white shadow-md z-20 md:hidden"
+    >
+      <ul class="flex flex-col space-y-4 p-4 text-lg">
+        <li>
+          <a href="overview.html" class="cursor-pointer hover:text-red-600 font"
+            >overview</a
+          >
+        </li>
+        <li>
+          <a href="stats.html" class="cursor-pointer hover:text-red-600 font"
+            >stats</a
+          >
+        </li>
+        <li>
+          <a href="history.html" class="cursor-pointer hover:text-red-600 font"
+            >history</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <main class="mx-auto px-4 py-8 bg-white">
+      <!-- Section Title -->
+      <div class="mb-8">
+        <h2
+          class="font-display text-2xl md:text-3xl font-bold uppercase tracking-wide text-gray-900"
+        >
+          Athlete Record
+        </h2>
+      </div>
+
+      <!-- Fight Cards -->
+      <div class="space-y-4">
+        <!-- Fight 13: vs Gaethje -->
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2025-03/GAETHJE_JUSTIN_03-08.png?itok=Zvg-a91R"
+                    alt="Justin Gaethje"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Gaethje</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Oct. 24, 2020
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >2</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >01:36</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >SUB</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=_j5uHs9Cec4"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 12: vs Poirier -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2025-07/POIRIER_DUSTIN_07-19.png?itok=XwP9i-xi"
+                    alt="dustin poirier"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >poirier</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Sep. 7, 2019
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >2:06</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >SUB</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=y22yRPyY7fk"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 11: vs McGregor -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2021-07/67667%252Fprofile-galery%252Fprofile-picture%252FMCGREGOR_CONOR_07-10.png?itok=LZJOSPZO"
+                    alt="conor mcgregor"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >mcgregor</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Oct. 6, 2018
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >4</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >03:03</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >SUB</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=JuBBIJ7adjM"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 10: vs Iaquinta -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2021-11/67178%252Fprofile-galery%252Fprofile-picture%252FIAQUINTA_AL_11-06.png?itok=RfREfyVL"
+                    alt="al iaquinta"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >iaquinta</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Apr. 7, 2018
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >5</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >05:00</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >DEC</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=rOdCnfDo1Mw"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 9: vs Barboza -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2025-12/BARBOZA_EDSON_12-06.png?itok=uesSYmQ1"
+                    alt="edson barboza"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >barboza</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Dec. 30, 2017
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >05:00</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >DEC</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=Uk7uHv6p_A8"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 8: vs Johnson -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2025-07/JOHNSON_MICHAEL_07-19.png?itok=6WCKk4p6"
+                    alt="michael jhonson"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Johnson
+                </a>
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Nov. 12, 2016
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >02:31</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >SUB</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=PaXJ_IlOkJU"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 7: vs Horcher -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Darrell_Horcher/HORCHER_DARRELL.png?itok=ogZJR4Dj"
+                    alt="Darrell Horcher"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >horcher</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Apr. 16, 2016
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >2</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >03:38</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >KO/TKO</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=4enGse_WaLI"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 6: vs Dos Anjos -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2024-10/2/DOS_ANJOS_RAFAEL_10-26.png?itok=Ae949H__"
+                    alt="rafael dos anjos"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >dos anjos</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Apr. 19, 2014
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >05:00</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >DEC</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=pVpJwya8GGk"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- FIght 5: vs Healy -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Pat_Healy/PatHealy_Headshot.png?itok=NkYUW0BX"
+                    alt="Pat Healy"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >healy</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Sep. 21, 2013
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >05:00</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >DEC</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=tBjIOnPGOl0"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- FIght 4: vs Trujillo -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2021-08/AbelTrujillo_Headshot.png?itok=dgfQeggL"
+                    alt="Abel Trujillo"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >trujillo</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                May. 25, 2013
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >05:00</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >DEC</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=0bKTNeXX6Ik"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 3: vs Tavares -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/2022-03/f73cb605-f323-42a6-bcaa-c27bb9845960%252FThiagoTavares_Headshot.png?itok=s5a4Ah_w"
+                    alt="Thiago Tavares"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >tavares</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Jan. 19, 2013
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >1</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >01:55</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >KO/TKO</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=yYDdglMheI4"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 2: vs Tibau -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/ufc-fighter-container/68033/profile-galery/profile-picture/GleisonTibau_Headshot2012.png?itok=Zied3I3Y"
+                    alt="Gleison Tibau"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >tibau</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Jul. 7, 2012
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >05:00</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >DEC</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=PYt1CSVrNCM"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fight 1: vs Shalorus -->
+
+        <article class="bg-white border-b-4 border-gray-200 overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Fighter Images -->
+            <div class="flex-shrink-0 relative content-center pl-3 pt-3">
+              <div class="flex">
+                <!-- Red Corner (Winner) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <div
+                    class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 uppercase z-10"
+                  >
+                    Win
+                  </div>
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Khabib_Nurmagomedov/1NURMAGOMEDOV_KHABIB.png?itok=DTbZJB5x"
+                    alt="Khabib Nurmagomedov"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <!-- Blue Corner (Loser) -->
+                <div
+                  class="relative w-32 h-20 md:w-40 md:h-24 lg:w-48 lg:h-28 bg-white"
+                >
+                  <img
+                    src="https://ufc.com/images/styles/event_results_athlete_headshot/s3/image/fighter_images/Kamal_Shalorus/Kamal_Shalorus_HeadShot.png?VersionId=HKVN_mBZo6Tg1TVL4Sj0SN26nmbolbCb&itok=ti83LNcm"
+                    alt="kamal shalorus"
+                    class="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Fight Info -->
+            <div class="flex-1 flex flex-col justify-center">
+              <h3
+                class="font-display text-lg md:text-xl font-bold uppercase tracking-wide mb-1 pl-3"
+              >
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >Nurmagomedov</a
+                >
+                <span class="text-gray-500 mx-2">vs</span>
+                <a
+                  class="hover:text-red-600 transition-colors text-black cursor-default"
+                  >shalorus</a
+                >
+              </h3>
+              <p class="text-gray-500 text-lg font-semibold mb-3 pl-10">
+                Jan. 20, 2012
+              </p>
+              <div class="flex flex-wrap gap-4 md:gap-6 p-5 border-t-4 w-1/3">
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Round</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >3</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Time</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >02:08</span
+                  >
+                </div>
+                <div class="text-center">
+                  <span
+                    class="text-gray-400 text-xs uppercase tracking-wider block"
+                    >Method</span
+                  >
+                  <span class="font-display text-2xl font-extrabold text-black"
+                    >SUB</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex lg:flex-col items-center justify-end gap-2 p-4">
+              <a
+                href="https://www.youtube.com/watch?v=p6Mgl9YzF0g"
+                target="_blank"
+                class="text-sm font-semibold text-gray-700 hover:text-red-600 transition-colors flex items-center gap-1 border-2 border-red-500 p-2"
+              >
+                Watch Replay
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- SCRIPT for MOBILE MENU -->
+    <script>
+      const btn = document.getElementById('menu-btn')
+      const menu = document.getElementById('mobile-menu')
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden')
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stats & Records</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Anton', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'ufc-black': '#000000',
+              'ufc-red': '#d20a0a',
+              'ufc-gray': '#1a1a1a',
+              'ufc-border': '#333333',
+              'ufc-text': '#a0a0a0',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .tab-btn.active {
+        border-bottom: 3px solid #d20a0a;
+        color: white;
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-[#111111] text-white">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-white h-16 flex items-center shadow-md z-20 px-6"
+    >
+      <!-- menu kiri -->
+      <div class="hidden md:flex items-center space-x-14 pl-10 w-1/3">
+        <a
+          href="overview.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font text-black"
+          >overview</a
+        >
+
+        <a
+          href="stats.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font text-black"
+          >stats</a
+        >
+      </div>
+
+      <!-- LOGO -->
+      <div class="flex justify-center w-1/3">
+        <a
+          href="slicingufcweb.html"
+          class="text-4xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 mma text-black"
+        >
+          khabib
+        </a>
+      </div>
+
+      <!-- menu kanan -->
+      <div class="hidden md:flex items-center pr-10 w-1/3 justify-end">
+        <a
+          href="history.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font text-black"
+          >history</a
+        >
+      </div>
+
+      <!-- BURGER -->
+      <button id="menu-btn" class="md:hidden ml-auto text-3xl text-black">
+        ☰
+      </button>
+    </nav>
+
+    <!-- MENU HP -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-16 left-0 w-full bg-white shadow-md z-20 md:hidden text-black"
+    >
+      <ul class="flex flex-col space-y-4 p-4 text-lg">
+        <li>
+          <a href="overview.html" class="cursor-pointer hover:text-red-600 font"
+            >overview</a
+          >
+        </li>
+        <li>
+          <a href="stats.html" class="cursor-pointer hover:text-red-600 font"
+            >stats</a
+          >
+        </li>
+        <li>
+          <a href="history.html" class="cursor-pointer hover:text-red-600 font"
+            >history</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- about khabib -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Left Content -->
+        <div class="flex-1">
+          <h2
+            class="font-display text-4xl md:text-5xl uppercase tracking-wide mb-4"
+          >
+            Info
+          </h2>
+          <p class="text-ufc-text text-sm mb-6">
+            Learn more about Khabib Nurmagomedov's UFC history, fighter facts,
+            and Q&amp;A below.
+          </p>
+
+          <!-- Tabs Navigation -->
+          <div class="border-b border-ufc-border mb-6">
+            <div class="flex gap-0">
+              <button
+                onclick="switchTab('bio')"
+                id="tab-bio"
+                class="px-6 py-3 text-sm font-semibold uppercase text-ufc-text hover:text-white transition-colors border-b-[3px] border-transparent data-[active=true]:border-ufc-red data-[active=true]:text-white"
+              >
+                Bio
+              </button>
+              <button
+                onclick="switchTab('qa')"
+                id="tab-qa"
+                data-active="true"
+                class="px-6 py-3 text-sm font-semibold uppercase text-ufc-text hover:text-white transition-colors border-b-[3px] border-transparent data-[active=true]:border-ufc-red data-[active=true]:text-white"
+              >
+                Q&amp;A
+              </button>
+              <button
+                onclick="switchTab('cbio')"
+                id="tab-cbio"
+                class="px-6 py-3 text-sm font-semibold uppercase text-ufc-text hover:text-white transition-colors border-b-[3px] border-transparent data-[active=true]:border-ufc-red data-[active=true]:text-white"
+              >
+                complete bio
+              </button>
+            </div>
+          </div>
+
+          <!-- Bio Tab Content -->
+          <div id="content-bio" class="hidden data-[active=true]:block">
+            <div class="space-y-4">
+              <div class="border-b border-ufc-border pb-4">
+                <div
+                  class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                >
+                  Status
+                </div>
+                <div class="text-white font-medium">Retired</div>
+              </div>
+              <div class="border-b border-ufc-border pb-4">
+                <div
+                  class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                >
+                  Place of Birth
+                </div>
+                <div class="text-white font-medium">
+                  Dagestan Republic, Russia
+                </div>
+              </div>
+              <div class="border-b border-ufc-border pb-4">
+                <div
+                  class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                >
+                  Trains at
+                </div>
+                <div class="text-white font-medium">
+                  AKA (American Kickboxing Academy) San Jose
+                </div>
+              </div>
+              <div
+                class="grid grid-cols-3 gap-4 border-b border-ufc-border pb-4"
+              >
+                <div>
+                  <div
+                    class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                  >
+                    Age
+                  </div>
+                  <div class="text-white font-medium">34</div>
+                </div>
+                <div>
+                  <div
+                    class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                  >
+                    Height
+                  </div>
+                  <div class="text-white font-medium">70.00</div>
+                </div>
+                <div>
+                  <div
+                    class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                  >
+                    Weight
+                  </div>
+                  <div class="text-white font-medium">155.00</div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-4">
+                <div>
+                  <div
+                    class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                  >
+                    Octagon Debut
+                  </div>
+                  <div class="text-white font-medium">Jan. 21, 2012</div>
+                </div>
+                <div>
+                  <div
+                    class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                  >
+                    Reach
+                  </div>
+                  <div class="text-white font-medium">70.00</div>
+                </div>
+                <div>
+                  <div
+                    class="text-ufc-text text-xs uppercase tracking-wider mb-1"
+                  >
+                    Leg reach
+                  </div>
+                  <div class="text-white font-medium">40.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q&A Tab Content -->
+          <div
+            id="content-qa"
+            data-active="true"
+            class="hidden data-[active=true]:block"
+          >
+            <div class="text-sm leading-relaxed space-y-6">
+              <div>
+                <h3 class="font-bold text-lg text-white mb-3">Fighter Facts</h3>
+                <ul class="list-disc list-inside text-ufc-text space-y-3">
+                  <li>Pro since 2008</li>
+                  <li>
+                    Eight wins by KO, 10 by submission (4 triangle, 2 RNC, 2
+                    kimura, armbar, neck crank)
+                  </li>
+                  <li>Has 11 first round finishes</li>
+                  <li>Finished 14 of last 20 wins</li>
+                  <li>Has 12-0 UFC record</li>
+                  <li>Made two successful title defenses</li>
+                  <li>Officially retired in 2021</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-lg text-white mb-3">UFC History</h3>
+                <div class="text-ufc-text space-y-3">
+                  <p>
+                    <span class="font-bold text-white">UFC 254</span> (10/24/20)
+                    Nurmagomedov submitted Justin Gaethje (triangle choke) at
+                    1:34 of the second round to defend his UFC lightweight title
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 242</span> (10/7/19)
+                    Nurmagomedov submitted Dustin Poirier (rear-naked choke) at
+                    2:06 of the third round to defend his UFC lightweight title
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 229</span> (10/6/18)
+                    Nurmagomedov submitted Conor McGregor (neck crank) at 3:03
+                    of the fourth round to defend his UFC lightweight title
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 223</span> (4/7/18)
+                    Nurmagomedov won a five round unanimous decision over Al
+                    Iaquinta to win the vacant UFC lightweight championship
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 219</span> (12/30/17)
+                    Nurmagomedov won a three round unanimous decision over Edson
+                    Barboza
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 205</span> (11/12/16)
+                    Nurmagomedov submitted Michael Johnson (kimura) at 2:31 of
+                    the third round
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC on FOX</span>
+                    (4/16/16) Nurmagomedov stopped Darrell Horcher (TKO,
+                    punches) at 3:38 of the second round
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC on FOX</span>
+                    (4/19/14) Nurmagomedov won a three round unanimous decision
+                    over Rafael dos Anjos
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 165</span> (9/21/13)
+                    Nurmagomedov won a three round unanimous decision over Pat
+                    Healy
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 160</span> (5/25/13)
+                    Nurmagomedov won a three round unanimous decision over Abel
+                    Trujillo
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC on FX</span>
+                    (1/19/13) Nurmagomedov knocked out Thiago Tavares (punches
+                    and elbows) at 1:55 of the first round
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC 148</span> (7/7/12)
+                    Nurmagomedov won a three round unanimous decision over
+                    Gleison Tibau
+                  </p>
+                  <p>
+                    <span class="font-bold text-white">UFC on FX</span>
+                    (1/20/12) Nurmagomedov submitted Kamal Shalorus (rear-naked
+                    choke) at 2:08 of the third round
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="font-bold text-lg text-white mb-3">Q&amp;A</h3>
+                <div class="text-ufc-text space-y-3">
+                  <p>
+                    <span class="font-bold text-white">TRAINING:</span> Morning
+                    run for about 30 minutes, lunch, sparring. Grappling and
+                    striking every other night. Also I like to go to Russian
+                    sauna once a week.
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >When and why did you start training for fighting?</span
+                    >
+                    In 2008 I decided to start competing in MMA under the
+                    guidance of my father. I had secured a few Combat Sambo
+                    awards by that time. My first fight I finished in the second
+                    round by RNC and was awarded submission of the night.
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >What ranks and titles have you held?</span
+                    >
+                    Two-time Russian Combat Sambo and two-time World Sambo
+                    Champion
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Do you have any heroes?</span
+                    >
+                    My childhood friend Eldar Eldarov
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >What does it mean for you to fight in the UFC?</span
+                    >
+                    It's my childhood dream and can tell you that I have seen
+                    all of UFC's fights. This is something I was doing while
+                    other kids played video games.
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Did you go to college and if so what degree did you
+                      earn?</span
+                    >
+                    I graduated from Financial Academy with honors.
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >What was your job before you started fighting?</span
+                    >
+                    I am dedicated to fighting and I did not have to work except
+                    for training youth and children in wrestling.
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Specific accomplishments in pro competition?</span
+                    >
+                    M-1 Selection Champion
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Ranks in any martial arts styles:</span
+                    >
+                    Internationally recognized Sambo Master
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Favorite grappling technique:</span
+                    >
+                    Free-style wrestling, double and single leg takedowns
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Favorite striking technique:</span
+                    >
+                    Thai Clinch, knees and elbows
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- complete bio tab content -->
+          <div id="content-cbio" class="hidden data-[active=true]:block">
+            <div class="text-sm leading-relaxed space-y-6">
+              <div>
+                <h3 class="font-bold text-lg text-white mb-3">
+                  Complete Biography
+                </h3>
+                <div class="text-ufc-text space-y-3">
+                  <p>
+                    <span class="font-bold text-white"
+                      >Who is Khabib Khabib Nurmagomedov?
+                    </span>
+                    <br />
+                    Khabib Nurmagomedov, born in September 1988, is an
+                    undefeated Russian mixed martial artist. No one is more
+                    qualified than Khabib Nurmagomedov to provide an unbiased
+                    perspective. His non-stop takedowns and incredible
+                    chain-wrestling are hallmarks of his undefeated UFC
+                    Lightweight Championship record of 28-0. He is also a judo
+                    black belt and two-time Combat Sambo World Champion.He has
+                    defeated multiple black belts in Brazilian Jiu-Jitsu with
+                    his top wrestling skills and incredibly ferocious ground and
+                    pound, successfully dismissing the vast majority of
+                    submission attempts.
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Where is Khabib Nurmagomedov now?
+                    </span>
+                    <br />
+                    In October 2020, after retiring, Khabib is currently
+                    coaching at American Kickboxing Academy. He is currently
+                    coaching and cornering UFC fighters Islam Makhachev, Tagir
+                    Ulanbekov, Abubakr Nurmagomedov, Umar Nurmagomedov, Zubaria
+                    Tukhugov, including Bellator fighters Islam Mamedov abd
+                    Gadzhi Rabadanov and Usman Nurmagomedov.
+                  </p>
+                  <p>
+                    <span class="font-bold text-white"
+                      >Khabib Nurmagomedov’s Early life and Amateur Fighting
+                    </span>
+                    <br />
+                    When Khabib was eight years old, his family moved from Sildi
+                    to Russia. His father built a gym on the ground floor of
+                    their house. He began taking interest in MMA when he saw
+                    people training at the gym. He started training under the
+                    guidance of his father , Abdulmanap Nurmagomedov. His father
+                    has worked as an athlete and veteran in the Soviet Army and
+                    taught sambo and judo in the military.In this video you can
+                    see Khabib wrestling with a bear depicting he was always
+                    keen on wrestling and becoming a professional athlete.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/ZMTeI51p_Ww?si=f93fOtI-09rUF3s8"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="text-ufc-text space-y-3">
+                <p>
+                  At the age of 12 in 2001, his family moved to Makhachkala ,
+                  where he started training in wrestling. In 2004, he started
+                  training for judo.In 2006, when he was 17, Khabib was training
+                  under his father in combat sambo.He was highly inspired by the
+                  three American boxers, Muhammad Ali, Brazilian footballer
+                  Ronaldo Luis Nazario de Lima, and Mike Tyson.His father wanted
+                  him to challenge in a gi-jacket, it was difficult for Khabib
+                  to transition from wrestling to judo. He was trained under
+                  Jafar Jafarov who taught him judo techniques.
+                </p>
+                <p>
+                  <span class="font-bold text-white">How did he start? </span>
+                  <br />
+                  In September 2008, Khabib made his professional MMA debut. He
+                  won four fights in less than a month. He secured a triangle
+                  choke on Vusal Bayramov at the CFSU Champion League. On
+                  October 11th, after defeating three of his opponents at the
+                  Atrium Cup Tournament in Moscow, he was awarded the title of
+                  the first-ever champion of the tournament. His winning streak
+                  continued for the next three years, with 11 victories out of
+                  12 opponents. In 2009, Khabib achieved his M1 Global debut as
+                  he defeated Shahbulat Shamhalaev via armbar in the first
+                  round. There were several notable finishes, including a
+                  first-round armbar finish of future Bellator championship
+                  candidate Shahbulat Shamhalaev, who was making his M-1 Global
+                  debut at the time. As part of the ProFC promotion's 2011
+                  season, he fought in seven fights, winning them all by way of
+                  submission and TKO. Khabib’s 16–0 record on the National
+                  circuits of Russia and Ukraine drew the curiosity of the
+                  Ultimate Fighting Championship (UFC) who expressed interest in
+                  signing him up.
+                </p>
+                <p>
+                  <span class="font-bold text-white"
+                    >ProFC Lawsuits against Khabib Nurmagomedov
+                  </span>
+                  <br />
+                  His father disclosed in an interview that they had 11 court
+                  lawsuits pending against ProFC as a consequence of a contract
+                  disagreement with the organization, which was challenging the
+                  authenticity of Khabib's UFC contract. After losing six trials
+                  and winning five, they came to a deal and Khabib was able to
+                  continue his legal profession without hindrance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Images -->
+        <div class="hidden lg:flex flex-col gap-4 w-[400px]">
+          <img
+            src="https://ufc.com/images/styles/qa_383x633/s3/image/2018-10/GettyImages-943199724.jpg?itok=2fyXXoxQ"
+            alt="Khabib Nurmagomedov vs Al Iaquinta at UFC 223"
+            class="w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <img
+            src="https://ufc.com/images/styles/qa_520x520/s3/image/2018-10/GettyImages-622880120.jpg?itok=tVBYpLEo"
+            alt="Khabib Nurmagomedov vs Michael Johnson at UFC 205"
+            class="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function switchTab(tabName) {
+        // Remove active from all content and buttons
+        document
+          .querySelectorAll('[data-active]')
+          .forEach((el) => el.removeAttribute('data-active'))
+
+        // Activate selected content and button
+        document
+          .getElementById('content-' + tabName)
+          .setAttribute('data-active', 'true')
+        document
+          .getElementById('tab-' + tabName)
+          .setAttribute('data-active', 'true')
+
+        // Update select
+        document.getElementById('tab-select').value = tabName
+      }
+      const btn = document.getElementById('menu-btn')
+      const menu = document.getElementById('mobile-menu')
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden')
+      })
+    </script>
+  </body>
+</html>

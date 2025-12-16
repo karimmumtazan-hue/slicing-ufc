@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slicing ufc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-white h-16 flex items-center shadow-md z-20 px-6"
+    >
+      <!-- menu kiri -->
+      <div class="hidden md:flex items-center space-x-14 pl-10 w-1/3">
+        <a
+          href="overview.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font"
+          >overview</a
+        >
+
+        <a
+          href="stats.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font"
+          >stats</a
+        >
+      </div>
+
+      <!-- LOGO -->
+      <div class="flex justify-center w-1/3">
+        <a
+          href="slicingufcweb.html"
+          class="text-4xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 mma"
+        >
+          khabib
+        </a>
+      </div>
+
+      <!-- menu kanan -->
+      <div class="hidden md:flex items-center pr-10 w-1/3 justify-end">
+        <a
+          href="history.html"
+          class="text-xl relative cursor-pointer hover:text-red-600 after:content-[''] after:absolute after:left-1/2 after:-bottom-1 after:w-0 after:h-[2px] after:bg-red-600 after:transition-all hover:after:w-full after:-translate-x-1/2 font"
+          >history</a
+        >
+      </div>
+
+      <!-- BURGER -->
+      <button id="menu-btn" class="md:hidden ml-auto text-3xl">☰</button>
+    </nav>
+
+    <!-- MENU HP -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-16 left-0 w-full bg-white shadow-md z-20 md:hidden"
+    >
+      <ul class="flex flex-col space-y-4 p-4 text-lg">
+        <li>
+          <a href="overview.html" class="cursor-pointer hover:text-red-600 font"
+            >overview</a
+          >
+        </li>
+        <li>
+          <a href="stats.html" class="cursor-pointer hover:text-red-600 font"
+            >stats</a
+          >
+        </li>
+        <li>
+          <a href="history.html" class="cursor-pointer hover:text-red-600 font"
+            >history</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="min-h-screen flex justify-center bg-black">
+      <div class="w-full max-w-6xl px-4 md:px-8 py-8">
+        <!-- HEADER -->
+
+        <!-- SECTION WRAP -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between mb-6 mt-10">
+            <h2
+              class="text-2xl md:text-4xl font-extrabold ufc-font-title uppercase text-white"
+            >
+              Stats &amp; Records
+            </h2>
+          </div>
+
+          <!-- 3 BOX ATAS -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white text-black flex items-center px-6 py-4">
+              <div>
+                <p class="text-3xl font-extrabold leading-none">30</p>
+                <p class="uppercase text-xs font-semibold tracking-wide mt-1">
+                  Fight Win Streak
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white text-black flex items-center px-6 py-4">
+              <div>
+                <p class="text-3xl font-extrabold leading-none">8</p>
+                <p class="uppercase text-xs font-semibold tracking-wide mt-1">
+                  Wins by Knockout
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white text-black flex items-center px-6 py-4">
+              <div>
+                <p class="text-3xl font-extrabold leading-none">11</p>
+                <p class="uppercase text-xs font-semibold tracking-wide mt-1">
+                  Wins by Submission
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- STRIKING & TAKEDOWN ACCURACY -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- STRIKING -->
+            <div
+              class="bg-white text-black p-5 flex flex-col md:flex-row items-center"
+            >
+              <div class="relative circle-shadow mb-4 md:mb-0 md:mr-6">
+                <!-- background circle -->
+                <svg class="w-40 h-40" viewBox="-14 -14 128 128">
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="50"
+                    stroke="#fefefe"
+                    stroke-width="26"
+                    fill="none"
+                  ></circle>
+                  <!-- progress 49% -->
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="50"
+                    stroke="#d20a0a"
+                    stroke-width="26"
+                    fill="none"
+                    stroke-dasharray="314.2 314.2"
+                    stroke-dashoffset="160.8"
+                    transform="rotate(-90 50 50)"
+                  ></circle>
+                  <text
+                    x="50"
+                    y="60"
+                    text-anchor="middle"
+                    font-size="30"
+                    fill="#1c1c1c"
+                  >
+                    49%
+                  </text>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold uppercase tracking-wide">
+                  Striking Accuracy
+                </h3>
+                <div class="mt-4 space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span class="uppercase text-gray-600"
+                      >Sig. Strikes Landed</span
+                    >
+                    <span class="font-semibold">705</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="uppercase text-gray-600"
+                      >Sig. Strikes Attempted</span
+                    >
+                    <span class="font-semibold">1444</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAKEDOWN -->
+            <div
+              class="bg-white text-black p-5 flex flex-col md:flex-row items-center"
+            >
+              <div class="relative circle-shadow mb-4 md:mb-0 md:mr-6">
+                <svg class="w-40 h-40" viewBox="-14 -14 128 128">
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="50"
+                    stroke="#fefefe"
+                    stroke-width="26"
+                    fill="none"
+                  ></circle>
+                  <!-- progress 48% -->
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="50"
+                    stroke="#d20a0a"
+                    stroke-width="26"
+                    fill="none"
+                    stroke-dasharray="314.2 314.2"
+                    stroke-dashoffset="163.3"
+                    transform="rotate(-90 50 50)"
+                  ></circle>
+                  <text
+                    x="50"
+                    y="60"
+                    text-anchor="middle"
+                    font-size="30"
+                    fill="#1c1c1c"
+                  >
+                    48%
+                  </text>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold uppercase tracking-wide">
+                  Takedown Accuracy
+                </h3>
+                <div class="mt-4 space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span class="uppercase text-gray-600"
+                      >Takedowns Landed</span
+                    >
+                    <span class="font-semibold">49</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="uppercase text-gray-600"
+                      >Takedowns Attempted</span
+                    >
+                    <span class="font-semibold">127</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RATE BOXES (4 KOTAK) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Sig Str & Takedown Avg -->
+            <div class="bg-white text-black p-5 flex flex-col space-y-4">
+              <div class="flex justify-between items-baseline">
+                <div>
+                  <p class="text-3xl font-extrabold leading-none">4.10</p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Sig. Str. Landed
+                  </p>
+                  <p class="uppercase text-[10px] tracking-wide text-gray-500">
+                    Per Min
+                  </p>
+                </div>
+                <div class="text-right">
+                  <p class="text-3xl font-extrabold leading-none">1.75</p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Sig. Str. Absorbed
+                  </p>
+                  <p class="uppercase text-[10px] tracking-wide text-gray-500">
+                    Per Min
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-baseline">
+                <div>
+                  <p class="text-3xl font-extrabold leading-none">5.32</p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Takedown Avg
+                  </p>
+                  <p class="uppercase text-[10px] tracking-wide text-gray-500">
+                    Per 15 Min
+                  </p>
+                </div>
+                <div class="text-right">
+                  <p class="text-3xl font-extrabold leading-none">0.79</p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Submission Avg
+                  </p>
+                  <p class="uppercase text-[10px] tracking-wide text-gray-500">
+                    Per 15 Min
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Defense & Knockdown/Time -->
+            <div class="bg-white text-black p-5 flex flex-col space-y-4">
+              <div class="flex justify-between items-baseline">
+                <div>
+                  <p class="text-3xl font-extrabold leading-none">
+                    65<span class="text-xl align-top">%</span>
+                  </p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Sig. Str. Defense
+                  </p>
+                </div>
+                <div class="text-right">
+                  <p class="text-3xl font-extrabold leading-none">
+                    85<span class="text-xl align-top">%</span>
+                  </p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Takedown Defense
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-baseline">
+                <div>
+                  <p class="text-3xl font-extrabold leading-none">0.17</p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Knockdown Avg
+                  </p>
+                </div>
+                <div class="text-right">
+                  <p class="text-3xl font-extrabold leading-none">13:13</p>
+                  <p class="uppercase text-xs tracking-wide text-gray-600">
+                    Average Fight Time
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 BOX POSISI / TARGET / METHOD -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Sig. Str. By Position -->
+            <div class="bg-white text-black p-5">
+              <h3 class="uppercase text-sm font-bold tracking-wide mb-4">
+                Sig. Str. By Position
+              </h3>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">Standing</span>
+                  <span class="font-semibold">298 (42%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 42%"
+                  >
+                    42%
+                  </div>
+                </div>
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">Clinch</span>
+                  <span class="font-semibold">27 (4%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 7%"
+                  >
+                    4%
+                  </div>
+                </div>
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">Ground</span>
+                  <span class="font-semibold">380 (54%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 54%"
+                  >
+                    54%
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sig. Str. by Target (TANPA DIAGRAM) -->
+            <div class="bg-white text-black p-5">
+              <h3 class="uppercase text-sm font-bold tracking-wide mb-4">
+                Sig. Str. by Target
+              </h3>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">Head</span>
+                  <span class="font-semibold">604 (86%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 86%"
+                  >
+                    86%
+                  </div>
+                </div>
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">Body</span>
+                  <span class="font-semibold">65 (9%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 12%"
+                  >
+                    9%
+                  </div>
+                </div>
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">Leg</span>
+                  <span class="font-semibold">36 (5%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 9%"
+                  >
+                    5%
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Win By Method -->
+            <div class="bg-white text-black p-5">
+              <h3 class="uppercase text-sm font-bold tracking-wide mb-4">
+                Win By Method
+              </h3>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">KO/TKO</span>
+                  <span class="font-semibold">8 (28%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 28%"
+                  >
+                    28%
+                  </div>
+                </div>
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">DEC</span>
+                  <span class="font-semibold">10 (34%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 34%"
+                  >
+                    34%
+                  </div>
+                </div>
+                <div class="flex justify-between">
+                  <span class="uppercase text-gray-600">SUB</span>
+                  <span class="font-semibold">11 (38%)</span>
+                </div>
+                <div
+                  class="h-2 md:h-3 rounded-full bg-gray-300 flex items-center overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-red-600 flex items-center justify-center text-xs md:text-sm font-semibold text-white"
+                    style="width: 38%"
+                  >
+                    38%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT for MOBILE MENU -->
+    <script>
+      const btn = document.getElementById('menu-btn')
+      const menu = document.getElementById('mobile-menu')
+
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden')
+      })
+    </script>
+  </body>
+</html>
